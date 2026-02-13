@@ -40,7 +40,7 @@ def print_step(number, text):
 
 def print_info(text):
     """Print info message."""
-    print(f"{YELLOW}ℹ {RESET}{text}")
+    print(f"{YELLOW}[INFO]{RESET} {text}")
 
 
 def check_oauth_client_exists():
@@ -65,9 +65,9 @@ def main():
             return 0
 
     print_header("Prerequisites")
-    print("✓ Google Cloud Console access (cloud.google.com)")
-    print("✓ Project: dgautohub")
-    print("✓ Gmail API enabled")
+    print("[OK] Google Cloud Console access (cloud.google.com)")
+    print("[OK] Project: dgautohub")
+    print("[OK] Gmail API enabled")
 
     input("\nPress Enter to continue...")
 
@@ -80,7 +80,7 @@ def main():
     response = input("\nOpen this URL in browser? (y/n): ").lower()
     if response == 'y':
         webbrowser.open("https://console.cloud.google.com/apis/credentials?project=dgautohub")
-        print(f"{GREEN}✓{RESET} Opened in browser\n")
+        print(f"{GREEN}[OK]{RESET} Opened in browser\n")
 
     input("Press Enter when you're ready for the next step...")
 
@@ -121,7 +121,7 @@ def main():
     print_header("Step 4: Download OAuth Client Credentials")
 
     print_step(1, "In the credentials list, find 'DCGMail Desktop Client'")
-    print_step(2, "Click the download icon (⬇) on the right")
+    print_step(2, "Click the download icon (download) on the right")
     print_step(3, "Save the JSON file as:")
     print(f"   {BOLD}./credentials/oauth_client.json{RESET}")
 
@@ -133,9 +133,9 @@ def main():
     print_header("Step 5: Verify Setup")
 
     if check_oauth_client_exists():
-        print(f"{GREEN}✓{RESET} Found: ./credentials/oauth_client.json")
+        print(f"{GREEN}[OK]{RESET} Found: ./credentials/oauth_client.json")
     else:
-        print(f"{YELLOW}⚠{RESET} NOT FOUND: ./credentials/oauth_client.json")
+        print(f"{YELLOW}[WARN]{RESET} NOT FOUND: ./credentials/oauth_client.json")
         print("\nPlease download the OAuth client credentials and save as:")
         print("./credentials/oauth_client.json")
         return 1
@@ -152,7 +152,7 @@ def main():
             env_content = f.read()
 
         if 'GMAIL_AUTH_TYPE' in env_content:
-            print(f"{GREEN}✓{RESET} GMAIL_AUTH_TYPE already configured in .env")
+            print(f"{GREEN}[OK]{RESET} GMAIL_AUTH_TYPE already configured in .env")
         else:
             response = input("Add GMAIL_AUTH_TYPE=oauth2 to .env now? (y/n): ").lower()
             if response == 'y':
@@ -175,7 +175,7 @@ def main():
                 with open(env_path, 'w') as f:
                     f.write('\n'.join(new_lines))
 
-                print(f"{GREEN}✓{RESET} Added GMAIL_AUTH_TYPE=oauth2 to .env")
+                print(f"{GREEN}[OK]{RESET} Added GMAIL_AUTH_TYPE=oauth2 to .env")
 
     # Step 7: Test authentication
     print_header("Step 7: Test OAuth2 Authentication")
@@ -194,23 +194,23 @@ def main():
         import subprocess
         result = subprocess.run([sys.executable, "main.py", "--validate-creds"])
         if result.returncode == 0:
-            print(f"\n{GREEN}✓{RESET} OAuth2 authentication successful!")
+            print(f"\n{GREEN}[OK]{RESET} OAuth2 authentication successful!")
         else:
-            print(f"\n{YELLOW}⚠{RESET} Authentication failed. Check the error above.")
+            print(f"\n{YELLOW}[WARN]{RESET} Authentication failed. Check the error above.")
             return 1
 
     # Success!
     print_header("Setup Complete!")
 
-    print(f"{GREEN}✓{RESET} OAuth2 credentials configured")
-    print(f"{GREEN}✓{RESET} Ready to use DCGMail")
+    print(f"{GREEN}[OK]{RESET} OAuth2 credentials configured")
+    print(f"{GREEN}[OK]{RESET} Ready to use DCGMail")
 
     print("\nNext steps:")
     print("  1. Test with: python main.py --dry-run --limit 5")
     print("  2. Configure Telegram bot (optional)")
     print("  3. Run: python main.py --limit 10")
 
-    print(f"\n{BOLD}You're all set!{RESET} 🎉\n")
+    print(f"\n{BOLD}You're all set!{RESET}\n")
 
     return 0
 
