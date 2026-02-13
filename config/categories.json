@@ -1,0 +1,86 @@
+{
+  "Work": {
+    "patterns": [
+      "teams",
+      "jira",
+      "confluence",
+      "meeting",
+      "slack",
+      "standup",
+      "pull request",
+      "code review",
+      "urgent",
+      "action required"
+    ],
+    "senders": [
+      "@company.com",
+      "@work.com"
+    ],
+    "priority": 1
+  },
+  "Crypto": {
+    "patterns": [
+      "solana",
+      "ethereum",
+      "bitcoin",
+      "crypto",
+      "blockchain",
+      "airdrop",
+      "trading",
+      "wallet",
+      "nft",
+      "defi"
+    ],
+    "senders": [
+      "@coinbase.com",
+      "@binance.com",
+      "@crypto.com"
+    ],
+    "priority": 2
+  },
+  "Admin": {
+    "patterns": [
+      "payroll",
+      "invoice",
+      "receipt",
+      "tax",
+      "billing",
+      "payment",
+      "expense",
+      "reimbursement",
+      "statement"
+    ],
+    "senders": [
+      "@payroll.com",
+      "@adp.com",
+      "@gusto.com"
+    ],
+    "priority": 3
+  },
+  "Newsletters": {
+    "patterns": [
+      "unsubscribe",
+      "newsletter",
+      "weekly digest",
+      "daily brief",
+      "roundup",
+      "update from",
+      "subscribe"
+    ],
+    "senders": [],
+    "priority": 4
+  },
+  "Personal": {
+    "patterns": [
+      "family",
+      "friend",
+      "personal"
+    ],
+    "senders": [
+      "@gmail.com",
+      "@yahoo.com",
+      "@outlook.com"
+    ],
+    "priority": 5
+  }
+}
