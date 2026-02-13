@@ -46,7 +46,7 @@ def validate_credentials(config: EnvConfigProvider, logger: FileLogger) -> bool:
         gmail_sa = config.get("gmail_service_account")
         if not gmail_sa or not Path(gmail_sa).exists():
             logger.error("Gmail service account not found")
-            print("❌ Gmail service account not found")
+            print("[ERROR] Gmail service account not found")
             print(f"   Expected: {gmail_sa}")
             print("   Set GMAIL_SERVICE_ACCOUNT in .env")
             return False
@@ -54,7 +54,7 @@ def validate_credentials(config: EnvConfigProvider, logger: FileLogger) -> bool:
         work_email = config.get("work_email")
         if not work_email:
             logger.error("Work email not configured")
-            print("❌ Work email not configured")
+            print("[ERROR] Work email not configured")
             print("   Set WORK_EMAIL in .env")
             return False
 
@@ -64,12 +64,12 @@ def validate_credentials(config: EnvConfigProvider, logger: FileLogger) -> bool:
 
         if not telegram_token:
             logger.warning("Telegram bot token not configured")
-            print("⚠️  Telegram bot token not configured")
+            print("[WARNING] Telegram bot token not configured")
             print("   Set TELEGRAM_BOT_TOKEN in .env (or use --dry-run)")
 
         if not telegram_chat:
             logger.warning("Telegram chat ID not configured")
-            print("⚠️  Telegram chat ID not configured")
+            print("[WARNING] Telegram chat ID not configured")
             print("   Set TELEGRAM_CHAT_ID in .env (or use --dry-run)")
 
         logger.info("Credential validation passed")
@@ -136,11 +136,11 @@ Examples:
         # Validate credentials
         logger.info("Validating credentials...")
         if not validate_credentials(config, logger):
-            print("\n❌ Credential validation failed. Check .env file.")
+            print("\n[ERROR] Credential validation failed. Check .env file.")
             return 1
 
         if args.validate_creds:
-            print("\n✅ All credentials valid")
+            print("\n[SUCCESS] All credentials valid")
             return 0
 
         # Initialize Gmail provider
@@ -151,7 +151,7 @@ Examples:
         logger.info("Initializing email categorizer...")
         if not Path(args.categories).exists():
             logger.error(f"Categories config not found: {args.categories}")
-            print(f"\n❌ Categories config not found: {args.categories}")
+            print(f"\n[ERROR] Categories config not found: {args.categories}")
             return 1
 
         categorizer = SimpleCategorizer(
@@ -175,12 +175,12 @@ Examples:
                     )
                 except CredentialError as e:
                     logger.error(f"Telegram initialization failed: {e}")
-                    print(f"\n❌ Telegram Error: {e}")
+                    print(f"\n[ERROR] Telegram Error: {e}")
                     print("   Use --dry-run to skip Telegram")
                     return 1
             else:
                 logger.warning("Telegram not configured, running in dry-run mode")
-                print("\n⚠️  Telegram not configured, running in dry-run mode")
+                print("\n[WARNING] Telegram not configured, running in dry-run mode")
                 args.dry_run = True
 
         # Initialize email processor
@@ -198,45 +198,45 @@ Examples:
 
         if success:
             logger.info("Pipeline completed successfully")
-            print("\n✅ DCGMail completed successfully")
+            print("\n[SUCCESS] DCGMail completed successfully")
             return 0
         else:
             logger.error("Pipeline failed")
-            print("\n❌ DCGMail pipeline failed")
+            print("\n[ERROR] DCGMail pipeline failed")
             return 3
 
     except CredentialError as e:
         logger.error(f"Credential error: {e}", exception=e)
-        print(f"\n❌ Credential Error: {e}")
+        print(f"\n[ERROR] Credential Error: {e}")
         print("   Check your .env file and credentials/service_account.json")
         return 1
 
     except ProviderError as e:
         logger.error(f"Provider error: {e}", exception=e)
-        print(f"\n❌ Provider Error: {e}")
+        print(f"\n[ERROR] Provider Error: {e}")
         print("   Gmail API may be unreachable or credentials invalid")
         return 2
 
     except NotifierError as e:
         logger.error(f"Notifier error: {e}", exception=e)
-        print(f"\n❌ Notifier Error: {e}")
+        print(f"\n[ERROR] Notifier Error: {e}")
         print("   Telegram API may be unreachable or bot token invalid")
         return 3
 
     except ConfigError as e:
         logger.error(f"Configuration error: {e}", exception=e)
-        print(f"\n❌ Configuration Error: {e}")
+        print(f"\n[ERROR] Configuration Error: {e}")
         print("   Check your .env file and config/categories.json")
         return 1
 
     except KeyboardInterrupt:
         logger.info("Interrupted by user")
-        print("\n\n⚠️  Interrupted by user")
+        print("\n\n[WARNING] Interrupted by user")
         return 130
 
     except Exception as e:
         logger.error(f"Unexpected error: {e}", exception=e)
-        print(f"\n❌ Unexpected error: {e}")
+        print(f"\n[ERROR] Unexpected error: {e}")
         if args.debug:
             import traceback
             traceback.print_exc()
