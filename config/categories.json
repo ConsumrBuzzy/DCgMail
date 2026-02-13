@@ -1,0 +1,78 @@
+{
+  "Work": {
+    "patterns": [
+      "(?i)meeting\\s+invitation",
+      "(?i)\\bteams\\b",
+      "(?i)\\bjira\\b",
+      "(?i)\\bconfluence\\b",
+      "(?i)\\bslack\\b",
+      "(?i)sprint\\s+review",
+      "(?i)standup",
+      "(?i)\\bPR\\b.*review",
+      "(?i)pull\\s+request",
+      "(?i)deploy",
+      "(?i)\\brelease\\b",
+      "(?i)\\bincident\\b"
+    ],
+    "senders": [
+      "@company\\.com$",
+      "noreply@github\\.com$",
+      "notifications@gitlab\\.com$"
+    ],
+    "priority": 1
+  },
+  "Crypto": {
+    "patterns": [
+      "(?i)\\bsolana\\b",
+      "(?i)\\betherenum\\b",
+      "(?i)\\bbitcoin\\b",
+      "(?i)\\bairdrop\\b",
+      "(?i)\\bDEX\\b",
+      "(?i)\\bNFT\\b",
+      "(?i)\\bwallet\\b.*balance",
+      "(?i)\\btransaction\\b.*confirm",
+      "(?i)\\bstaking\\b",
+      "(?i)\\bswap\\b.*complete"
+    ],
+    "senders": [
+      "@coinbase\\.com$",
+      "@solflare\\.com$",
+      "@phantom\\.app$",
+      "@binance\\.com$"
+    ],
+    "priority": 2
+  },
+  "Admin": {
+    "patterns": [
+      "(?i)\\bpayroll\\b",
+      "(?i)\\bstatement\\b",
+      "(?i)\\binvoice\\b",
+      "(?i)\\breceipt\\b",
+      "(?i)\\bpayment\\b.*confirm",
+      "(?i)\\btax\\b.*document",
+      "(?i)\\binsurance\\b",
+      "(?i)\\bbenefits\\b.*enrollment"
+    ],
+    "senders": [
+      "@paypal\\.com$",
+      "@stripe\\.com$",
+      "@bank.*\\.com$",
+      "@hr\\.company\\.com$"
+    ],
+    "priority": 3
+  },
+  "Noise": {
+    "patterns": [
+      "(?i)\\bnewsletter\\b",
+      "(?i)\\bunsubscribe\\b",
+      "(?i)\\bpromotional\\b",
+      "(?i)\\bsale\\b",
+      "(?i)\\bdiscount\\b",
+      "(?i)\\bspecial\\s+offer\\b",
+      "(?i)\\bfree\\s+shipping\\b",
+      "(?i)\\blimited\\s+time\\b"
+    ],
+    "senders": [],
+    "priority": 99
+  }
+}
