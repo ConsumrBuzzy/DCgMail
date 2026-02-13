@@ -54,7 +54,7 @@ def validate_credentials(config: EnvConfigProvider, logger: FileLogger) -> bool:
                 print("[ERROR] Gmail OAuth2 client credentials not found")
                 print(f"   Expected: {oauth_client}")
                 print("   Download from: https://console.cloud.google.com/apis/credentials")
-                print("   Create: OAuth 2.0 Client ID → Desktop app")
+                print("   Create: OAuth 2.0 Client ID -> Desktop app")
                 return False
             logger.info(f"Using OAuth2 authentication")
 
