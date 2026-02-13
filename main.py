@@ -19,6 +19,7 @@ from pathlib import Path
 from src.config.env_config import EnvConfigProvider
 from src.loggers.file_logger import FileLogger
 from src.providers.gmail_provider import GmailProvider
+from src.providers.gmail_oauth_provider import GmailOAuth2Provider
 from src.categorizers.simple_categorizer import SimpleCategorizer
 from src.notifiers.telegram_notifier import TelegramNotifier
 from src.core import EmailProcessor
@@ -42,21 +43,38 @@ def validate_credentials(config: EnvConfigProvider, logger: FileLogger) -> bool:
         True if all credentials are valid
     """
     try:
-        # Check Gmail credentials
-        gmail_sa = config.get("gmail_service_account")
-        if not gmail_sa or not Path(gmail_sa).exists():
-            logger.error("Gmail service account not found")
-            print("[ERROR] Gmail service account not found")
-            print(f"   Expected: {gmail_sa}")
-            print("   Set GMAIL_SERVICE_ACCOUNT in .env")
-            return False
+        # Check Gmail credentials based on auth type
+        auth_type = config.get("gmail_auth_type", "service_account")
 
-        work_email = config.get("work_email")
-        if not work_email:
-            logger.error("Work email not configured")
-            print("[ERROR] Work email not configured")
-            print("   Set WORK_EMAIL in .env")
-            return False
+        if auth_type == "oauth2":
+            # Validate OAuth2 credentials
+            oauth_client = config.get("gmail_oauth_client")
+            if not oauth_client or not Path(oauth_client).exists():
+                logger.error("Gmail OAuth2 client not found")
+                print("[ERROR] Gmail OAuth2 client credentials not found")
+                print(f"   Expected: {oauth_client}")
+                print("   Download from: https://console.cloud.google.com/apis/credentials")
+                print("   Create: OAuth 2.0 Client ID → Desktop app")
+                return False
+            logger.info(f"Using OAuth2 authentication")
+
+        else:
+            # Validate service account credentials
+            gmail_sa = config.get("gmail_service_account")
+            if not gmail_sa or not Path(gmail_sa).exists():
+                logger.error("Gmail service account not found")
+                print("[ERROR] Gmail service account not found")
+                print(f"   Expected: {gmail_sa}")
+                print("   Set GMAIL_SERVICE_ACCOUNT in .env")
+                return False
+
+            work_email = config.get("work_email")
+            if not work_email:
+                logger.error("Work email not configured")
+                print("[ERROR] Work email not configured")
+                print("   Set WORK_EMAIL in .env")
+                return False
+            logger.info(f"Using service account authentication for {work_email}")
 
         # Check Telegram credentials (only if not dry-run)
         telegram_token = config.get("telegram_bot_token")
@@ -143,9 +161,22 @@ Examples:
             print("\n[SUCCESS] All credentials valid")
             return 0
 
-        # Initialize Gmail provider
-        logger.info("Initializing Gmail provider...")
-        gmail_provider = GmailProvider(config=config, logger=logger)
+        # Initialize Gmail provider based on auth type
+        auth_type = config.get("gmail_auth_type", "service_account")
+        logger.info(f"Initializing Gmail provider (auth_type={auth_type})...")
+
+        if auth_type == "oauth2":
+            # Use OAuth2 provider
+            oauth_client = config.get("gmail_oauth_client")
+            oauth_token = config.get("gmail_oauth_token", "./credentials/token.json")
+            gmail_provider = GmailOAuth2Provider(
+                oauth_client_path=oauth_client,
+                token_path=oauth_token,
+                logger=logger
+            )
+        else:
+            # Use service account provider
+            gmail_provider = GmailProvider(config=config, logger=logger)
 
         # Initialize categorizer
         logger.info("Initializing email categorizer...")

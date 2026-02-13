@@ -26,13 +26,30 @@ class DCGMailSettings(BaseSettings):
     )
 
     # Gmail API Configuration
+    gmail_auth_type: str = Field(
+        default="service_account",
+        env="GMAIL_AUTH_TYPE",
+        description="Authentication type: 'service_account' or 'oauth2'"
+    )
     gmail_service_account: str = Field(
         default="./credentials/service_account.json",
         env="GMAIL_SERVICE_ACCOUNT",
+        description="Path to service account JSON (for service_account auth)"
+    )
+    gmail_oauth_client: str = Field(
+        default="./credentials/oauth_client.json",
+        env="GMAIL_OAUTH_CLIENT",
+        description="Path to OAuth2 client JSON (for oauth2 auth)"
+    )
+    gmail_oauth_token: str = Field(
+        default="./credentials/token.json",
+        env="GMAIL_OAUTH_TOKEN",
+        description="Path to OAuth2 token storage (auto-generated)"
     )
     work_email: str = Field(
         default="",
         env="WORK_EMAIL",
+        description="Work email address (for service_account auth)"
     )
 
     # Telegram Configuration
