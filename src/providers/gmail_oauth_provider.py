@@ -332,14 +332,14 @@ class GmailOAuth2Provider(EmailProvider):
 
             email = Email(
                 id=msg_detail['id'],
-                subject=header_dict.get('subject', '(No Subject)'),
                 sender=header_dict.get('from', 'Unknown'),
-                receiver=header_dict.get('to', ''),
-                body=body,
+                subject=header_dict.get('subject', '(No Subject)'),
                 snippet=msg_detail.get('snippet', ''),
                 timestamp=datetime.fromtimestamp(
                     int(msg_detail['internalDate']) / 1000
-                )
+                ),
+                read=False,
+                labels=msg_detail.get('labelIds', [])
             )
 
             return email
