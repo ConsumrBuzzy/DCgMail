@@ -117,6 +117,13 @@ class EmailAnalyzer:
             self.logger.warning("Could not import daily_dev_parser")
             parse_daily_dev = lambda x: []
 
+        # Buckets for our morning email
+        digest_articles = []      # For "Dev_Articles" -> List of links
+        summaries = defaultdict(int) # For "Infrastructure" -> Counts
+        promos_filtered = 0       # For "Product_Updates" (marketing)
+        promos_kept = []          # For "Product_Updates" (real updates)
+        trash_count = 0           # For "Promotional"
+
         for email in self.emails:
             matched = False
             
