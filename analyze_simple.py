@@ -108,18 +108,32 @@ class EmailAnalyzer:
             self.logger.error(f"Failed to load categories: {e}")
             return "Error loading configuration."
 
-        # Buckets for our morning email
-        digest_articles = []      # For "Dev_Articles" -> List of links
-        summaries = defaultdict(int) # For "Infrastructure" -> Counts
-        promos_filtered = 0       # For "Product_Updates" (marketing)
-        promos_kept = []          # For "Product_Updates" (real updates)
-        trash_count = 0           # For "Promotional"
-
-        import re
+        # Import parser
+        try:
+            from src.parsers.daily_dev_parser import parse_daily_dev
+        except ImportError:
+            self.logger.warning("Could not import daily_dev_parser")
+            parse_daily_dev = lambda x: []
 
         for email in self.emails:
             matched = False
             
+            # Special handling for daily.dev to extract articles
+            if "daily.dev" in email.sender.lower() and "digest" in email.subject.lower():
+                # Parse body
+                # We need the body, but Email object might only have snippet
+                # Reread 'fetch' to ensure we get body? 
+                # GmailProvider _parse_email does extract body.
+                # But 'Email' struct doesn't have 'body' field in __init__? 
+                # Let's check 'src/providers/gmail_oauth_provider.py' _parse_email
+                # It calls _extract_body but does it save it?
+                # The Email dataclass definition isn't visible here, but let's assume I need to fetch it or it's there.
+                # Actually, check interfaces.py? No, let's just assume we need to add it or it exists.
+                # Wait, the Email class in interfaces.py probably doesn't have 'body'.
+                # I should probably add 'body' to Email class or just re-fetch here?
+                # Re-fetching is slow. Let's look at interfaces.py first.
+                pass 
+                
             # Check against categories
             for cat_name, rules in categories.items():
                 if matched: break
@@ -136,7 +150,24 @@ class EmailAnalyzer:
                     matched = True
                     
                     if action == "digest":
-                        digest_articles.append(email)
+                        # If it's a daily.dev email, we want to PARSE it, not just list it.
+                        if "daily.dev" in email.sender:
+                            # We need the full body. 
+                            # The 'Email' object from fetch_history might not have it if I didn't verify it.
+                            # In 'gmail_oauth_provider.py', the Email object is created.
+                            # Let's rely on the provider having put the body in... somewhere?
+                            # Actually, looking at previous view_file of gmail_oauth_provider, 
+                            # Email(id=..., sender=..., subject=..., snippet=..., timestamp=..., read=..., labels=...)
+                            # It DOES NOT store the body.
+                            # I need to modify the Email class and the Provider to store the body.
+                            pass
+
+                        digest_articles.append({
+                            "sender": email.sender,
+                            "subject": email.subject,
+                            "url": f"https://mail.google.com/mail/u/0/#inbox/{email.id}",
+                            "timestamp": email.timestamp
+                        })
                     
                     elif action == "summarize":
                         key = cat_name
@@ -146,7 +177,6 @@ class EmailAnalyzer:
                         summaries[key] += 1
                         
                     elif action == "filter_marketing":
-                        # If "welcome" or "last chance" in subject -> Trash it
                         if re.search(r"welcome|last chance|webinar|join us", email.subject, re.IGNORECASE):
                             trash_count += 1
                         else:
@@ -166,28 +196,65 @@ class EmailAnalyzer:
         # 1. High Priority Digest (Dev Articles)
         if digest_articles:
             lines.append("## 📚 Reads for Today")
-            # Sort by Sender
-            digest_articles.sort(key=lambda x: x.sender)
+            
+            # Separate parsed vs generic
+            # Actually, I need to fetch bodies for daily.dev emails NOW.
+            # This is inefficient but safe: fetch the body if I need it.
+            # Or better: Update Email class to have 'body'.
+            # For now, I will use the provider to fetch the specific message body if it's daily.dev
+            
+            # Let's sort generic articles
+            digest_articles.sort(key=lambda x: x['sender'])
+            
+            parsed_articles = []
+            generic_articles = []
+            
+            for item in digest_articles:
+                if "daily.dev" in item['sender']:
+                     # Fetch body
+                     try:
+                         # Hacky access to provider
+                         if hasattr(self.provider, 'service'):
+                             msg = self.provider.service.users().messages().get(userId='me', id=item['url'].split('/')[-1], format='full').execute()
+                             body = self.provider._extract_body(msg['payload'])
+                             parsed = parse_daily_dev(body)
+                             for p in parsed:
+                                 parsed_articles.append({
+                                     "sender": p['source'], # Use the extracted source!
+                                     "subject": p['title'],
+                                     "url": p['url'],
+                                     "timestamp": item['timestamp']
+                                 })
+                     except Exception as e:
+                         self.logger.error(f"Failed to parse daily.dev: {e}")
+                         # Fallback
+                         generic_articles.append(item)
+                else:
+                    generic_articles.append(item)
+
+            # Combine
+            all_items = parsed_articles + generic_articles
+            # Unique by URL
+            unique = {x['url']: x for x in all_items}.values()
+            all_items = sorted(list(unique), key=lambda x: x['sender'])
             
             current_sender = None
-            for email in digest_articles:
-                sender_name = email.sender.split('<')[0].strip('" ').strip()
+            for item in all_items:
+                sender_name = item['sender'].split('<')[0].strip('" ').strip()
                 if sender_name != current_sender:
                     lines.append(f"\n### {sender_name}")
                     current_sender = sender_name
                 
-                lines.append(f"- [{email.subject}](https://mail.google.com/mail/u/0/#inbox/{email.id})")
+                lines.append(f"- [{item['subject']}]({item['url']})")
             lines.append("")
 
         # 2. Product Updates (Kept)
         if promos_kept:
             lines.append("## 🚀 Product Updates")
-            # Sort by Sender
             promos_kept.sort(key=lambda x: x.sender)
             
             for email in promos_kept:
                 sender_name = email.sender.split('<')[0].strip('" ').strip()
-                # Highlight Google/Cloud
                 icon = "☁️" if "google" in sender_name.lower() or "cloud" in sender_name.lower() else "🔹"
                 lines.append(f"- {icon} **{sender_name}**: {email.subject}")
             lines.append("")
