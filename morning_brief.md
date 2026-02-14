@@ -1,8 +1,27 @@
 # 🌅 Morning Catch-Up: Friday, Feb 13
 
 ## 📂 Organization Log
+- [MOVE] Cut OpenClaw Costs by 95% -> Software Engineering/Daily Dose of DS
+- [MOVE] Zoom Incident - Service Degradation Affecting Zoom Virtual Agent for a Subset of users in North America - 13 February 2026 -> DevOps/no-reply@zoomstatus.com
+- [MOVE] Zoom Incident - Service Degradation Affecting Zoom Virtual Agent for a Subset of users in North America - 13 February 2026 -> DevOps/no-reply@zoomstatus.com
+- [MOVE] Let AI handle the busywork -> Subscriptions/monday.com
+- [MOVE] Introducing Gemini 3 Deep Think -> Subscriptions/News from Google
+- [MOVE] Public Cloud Maintenance - [GRA9][Containers & Orchestration] - Load Balancer maintenance notification - 5 March 2026 -> DevOps/OVHcloud Status
+- [MOVE] If you’re just getting started with AI, learn these 10 concepts -> Software Engineering/Neo Kim
+- [MOVE] Robert, your personal update from daily.dev is ready -> Software Engineering/daily.dev
+- [MOVE] 12 Docker Best Practices Every Developer Should Follow in Production 🐳🚀 | Hemanth Raju in Python in Plain English -> Software Engineering/Medium Daily Digest
+- [MOVE] Get your team sprint ready -> Subscriptions/monday.com
+- [MOVE] Lead Drips: BURNT OSD - 20 calls or more -> Reports & Guides/Convoso
+- [MOVE] Build your first Oz agent in under 10 minutes -> Subscriptions/Petra from Warp
+- [MOVE] How Do LLMs Work? -> Software Engineering/Daily Dose of DS
+- [MOVE] Choose how you see your work -> Subscriptions/monday.com
 - [TRASH] Bulk Download 37 books in "Computer Science" ("PDF Books by Henning G. Schulzrinne and other authors" <premium@academia-mail.com>)
-- [TRASH] Feeling cozy? So are these restaurants. (Yelp West Palm Beach <no-reply@mail.yelp.com>)
+- [MOVE] Medium Earnings Dropped After November 2025? -> Software Engineering/CodeWithYog
+- [MOVE] Tomorrow: Mobile Builder Spotlight + Office Hours -> Subscriptions/Replit
+- [MOVE] Public Cloud Maintenance - [GRA1][Network] - Load Balancer maintenance notification - 12 February 2026 -> DevOps/OVHcloud Status
+- [MOVE] Public Cloud Incident - [GLOBAL][Data & Analytics] - Creation Databases/MongoDB services - 12 February 2026 -> DevOps/OVHcloud Status
+- [MOVE] Last chance to join Emmanuel's live AMA today! Starting in 2 hours -> Subscriptions/Bubble
+- ... and 57 more actions.
 
 ## 📚 Reads for Today
 
