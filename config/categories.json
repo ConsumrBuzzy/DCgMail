@@ -1,86 +1,93 @@
 {
-  "Work": {
+  "Infrastructure": {
+    "priority": 2,
+    "action": "summarize",
     "patterns": [
-      "teams",
-      "jira",
-      "confluence",
-      "meeting",
-      "slack",
-      "standup",
-      "pull request",
-      "code review",
-      "urgent",
-      "action required"
+      "status-ovhcloud\\.com",
+      "zoomstatus\\.com",
+      "maintenance",
+      "incident",
+      "load balancer",
+      "public cloud",
+      "status update"
     ],
     "senders": [
-      "@company.com",
-      "@work.com"
-    ],
-    "priority": 1
+      "no-reply@status-ovhcloud.com",
+      "no-reply@zoomstatus.com"
+    ]
   },
-  "Crypto": {
+  "Business_Reports": {
+    "priority": 2,
+    "action": "summarize",
     "patterns": [
-      "solana",
-      "ethereum",
-      "bitcoin",
-      "crypto",
-      "blockchain",
-      "airdrop",
-      "trading",
-      "wallet",
-      "nft",
-      "defi"
+      "convoso\\.com",
+      "lead drips",
+      "burnt osd"
     ],
     "senders": [
-      "@coinbase.com",
-      "@binance.com",
-      "@crypto.com"
-    ],
-    "priority": 2
+      "no-reply@convoso.com"
+    ]
   },
-  "Admin": {
+  "Dev_Articles": {
+    "priority": 1,
+    "action": "digest",
     "patterns": [
-      "payroll",
-      "invoice",
-      "receipt",
-      "tax",
-      "billing",
-      "payment",
-      "expense",
-      "reimbursement",
-      "statement"
+      "daily\\.dev",
+      "dailydoseofds\\.com",
+      "medium\\.com",
+      "substack\\.com",
+      "dev\\.to",
+      "technologynews",
+      "python",
+      "docker",
+      "llm",
+      "generative ai",
+      "system design"
     ],
     "senders": [
-      "@payroll.com",
-      "@adp.com",
-      "@gusto.com"
-    ],
-    "priority": 3
+      "avi@dailydoseofds.com",
+      "noreply@medium.com",
+      "informer@daily.dev",
+      "yo@dev.to",
+      "systemdesignone@substack.com"
+    ]
   },
-  "Newsletters": {
+  "Product_Updates": {
+    "priority": 3,
+    "action": "filter_marketing",
     "patterns": [
-      "unsubscribe",
-      "newsletter",
-      "weekly digest",
-      "daily brief",
-      "roundup",
-      "update from",
-      "subscribe"
-    ],
-    "senders": [],
-    "priority": 4
-  },
-  "Personal": {
-    "patterns": [
-      "family",
-      "friend",
-      "personal"
+      "monday\\.com",
+      "warp\\.dev",
+      "replit\\.com",
+      "bubble\\.io",
+      "rowzero\\.io",
+      "product update",
+      "introducing",
+      "new feature",
+      "changelog"
     ],
     "senders": [
-      "@gmail.com",
-      "@yahoo.com",
-      "@outlook.com"
+      "team@use.mail.monday.com",
+      "feedback+customerio@warp.dev",
+      "contact@mail.replit.com",
+      "newsletter@mail.bubble.io"
+    ]
+  },
+  "Promotional": {
+    "priority": 4,
+    "action": "trash",
+    "patterns": [
+      "last chance",
+      "welcome to",
+      "join us",
+      "special offer",
+      "discount",
+      "webinar",
+      "save big"
     ],
-    "priority": 5
+    "senders": [
+      "premium@academia-mail.com",
+      "no-reply@mail.yelp.com"
+    ]
   }
 }
