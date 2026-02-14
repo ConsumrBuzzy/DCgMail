@@ -449,3 +449,31 @@ class GmailOAuth2Provider(EmailProvider):
 
         except Exception as e:
             raise ProviderError(f"Failed to get/create label: {e}")
+
+    def archive_email(self, email_id: str) -> bool:
+        """
+        Archive email by removing INBOX label.
+        
+        Args:
+            email_id: Gmail message ID
+            
+        Returns:
+            True if successful
+        """
+        if not self.service:
+            raise ProviderError("Not authenticated. Call authenticate() first.")
+
+        try:
+            self.service.users().messages().modify(
+                userId='me',
+                id=email_id,
+                body={'removeLabelIds': ['INBOX']}
+            ).execute()
+            
+            if self.logger:
+                self.logger.info(f"Archived email {email_id}")
+                
+            return True
+            
+        except Exception as e:
+            raise ProviderError(f"Failed to archive email: {e}")

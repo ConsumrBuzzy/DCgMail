@@ -2,6 +2,8 @@
   "Infrastructure": {
     "priority": 2,
     "action": "summarize",
+    "label": "DevOps",
+    "archive": true,
     "patterns": [
       "status-ovhcloud\\.com",
       "zoomstatus\\.com",
@@ -19,6 +21,8 @@
   "Business_Reports": {
     "priority": 2,
     "action": "summarize",
+    "label": "Reports & Guides",
+    "archive": true,
     "patterns": [
       "convoso\\.com",
       "lead drips",
@@ -31,6 +35,8 @@
   "Dev_Articles": {
     "priority": 1,
     "action": "digest",
+    "label": "Software Engineering",
+    "archive": true,
     "patterns": [
       "daily\\.dev",
       "dailydoseofds\\.com",
@@ -55,6 +61,8 @@
   "Product_Updates": {
     "priority": 3,
     "action": "filter_marketing",
+    "label": "Subscriptions",
+    "archive": true,
     "patterns": [
       "google\\.com",
       "google cloud",
