@@ -18,71 +18,51 @@ def parse_daily_dev(body):
             
     # Process each URL
     for url, indices in url_occurrences.items():
-        # We process the first 2 occurrences found (Source, Title)
-        # Sometimes there's only 1 (if layouts change), but usually 2+
+        candidates = []
         
         # Helper to extract text block before a line index
         def get_text_block(start_index):
             block = []
-            # Start from line *before* the link line
             curr = start_index - 1
             while curr >= 0:
                 text = lines[curr].strip()
-                if not text: # Empty line
-                    if block: break # Stop if we already have content
-                    # If we don't have content yet, keep going (skip trailing empty lines)
-                elif text.startswith('---'): # Separator
-                    break
-                elif text.startswith('(') and ')' in text: # Another link
-                    break
+                if not text: 
+                    if block: break 
+                elif text.startswith('---'): break
+                elif text.startswith('(') and ')' in text: break
                 else:
-                    block.insert(0, text) # Prepend
-                
-                # Safety break for long blocks
+                    block.insert(0, text)
                 if len(block) > 5: break
                 curr -= 1
             return " ".join(block)
 
-        # Candidate 1: Source (usually the first occurrence)
-        candidate1 = ""
-        candidate2 = ""
-        
-        if len(indices) > 0:
-            candidate1 = get_text_block(indices[0])
+        for idx in indices:
+            candidates.append(get_text_block(idx))
             
-        if len(indices) > 1:
-            candidate2 = get_text_block(indices[1])
+        # Filter candidates
+        # Remove empty, Headers, Read More, Logos
+        valid = []
+        for c in candidates:
+            if not c: continue
+            if "You might find" in c: continue
+            if "Read more" in c: continue
+            if "Logo" in c: continue
+            if "Daily Dev Ltd" in c: continue
+            if "CodeRabbit" in c: continue # Ads
+            if "Get Started Today" in c: continue # Ads
+            valid.append(c)
             
-        # Logic to determine which is Title
-        # Usually: 
-        # Occ 1: "Source Name"
-        # Occ 2: "Title of Article"
-        # Occ 3: "Read more" (Empty block or "Read more")
-        
-        title = candidate2 if candidate2 else candidate1
-        source = candidate1 if candidate2 else "daily.dev"
-        
-        # Filters
-        if "Read more" in title or "Logo" in title: continue
-        if not title: continue
-        
-        # Cleanup
-        # If title starts with "You might find...", remove it (it's a header)
-        if "You might find these articles interesting" in title:
-            # The source is usually afterwards? 
-            # Actually in the sample: 
-            # "You might find these articles interesting"
-            # (Link)
-            # "Tech World..."
-            # (Link)
-            # So "You might..." is associated with a link? No.
-            # Wait, line 16 has a link but NO text before it except the header.
-            # That link is likely the "Feed" link, not a specific post?
-            # No, it looks like a post link.
-            pass
-
-        # If title matches source, and looks like a name, accept it.
-        
+        if len(valid) >= 2:
+            # Assume [Source, Title]
+            source = valid[0]
+            title = valid[1]
+        elif len(valid) == 1:
+            # Assume [Title] (Source might be part of it or missing)
+            title = valid[0]
+            source = "daily.dev"
+        else:
+            continue
+            
         articles.append({
             "title": title,
             "source": source,
