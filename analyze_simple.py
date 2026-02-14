@@ -139,7 +139,7 @@ class EmailAnalyzer:
                 if matched: break
                 
                 action = rules.get("action", "none")
-                root_label = rules.get("root_label")
+                root_label = rules.get("label") or rules.get("root_label")
                 archive = rules.get("archive", False)
                 patterns = rules.get("patterns", [])
                 senders = rules.get("senders", [])
