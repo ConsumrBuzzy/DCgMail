@@ -8,12 +8,14 @@ intelligent filters and categories with Claude's assistance.
 
 import sys
 import json
+import base64
 import argparse
-import os
+import sys
+import re
 from pathlib import Path
+from typing import List, Dict, Any, Optional
 from collections import Counter, defaultdict
 from datetime import datetime, timedelta
-from typing import List, Dict, Any
 
 # Import interfaces and providers (Pydantic-free)
 from src.interfaces import ConfigProvider, ConfigError, Email, Logger
