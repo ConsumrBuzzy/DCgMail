@@ -150,6 +150,7 @@ class EmailAnalyzer:
                 
                 if is_sender or is_pattern:
                     matched = True
+                    # print(f"DEBUG: Matched {cat_name} | Action: {action} | Root: {root_label} | Org: {organize}")
                     
                     # --- Data Collection for Email ---
                     if action == "digest":
