@@ -23,11 +23,26 @@ def parse_daily_dev(body):
         # Helper to extract text block before a line index
         def get_text_block(start_index):
             block = []
+            
+            # 1. Check current line content before the URL
+            current_line = lines[start_index]
+            # Find URL start index in this line
+            url_start = current_line.find(url)
+            if url_start > 0:
+                pre_text = current_line[:url_start].strip()
+                # Remove opening parenthesis if it was "Source ( URL"
+                if pre_text.endswith('('):
+                    pre_text = pre_text[:-1].strip()
+                if pre_text:
+                    block.append(pre_text)
+            
+            # 2. Look backwards
             curr = start_index - 1
             while curr >= 0:
                 text = lines[curr].strip()
                 if not text: 
                     if block: break 
+                elif text.startswith('='): break # Header
                 elif text.startswith('---'): break
                 elif text.startswith('(') and ')' in text: break
                 else:
