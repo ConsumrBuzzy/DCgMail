@@ -20,6 +20,7 @@ import base64
 from pathlib import Path
 from typing import List, Optional
 from datetime import datetime
+from email.mime.text import MIMEText
 
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
@@ -32,7 +33,8 @@ from ..interfaces import EmailProvider, Email, CredentialError, ProviderError
 # Gmail API scopes
 SCOPES = [
     'https://www.googleapis.com/auth/gmail.readonly',
-    'https://www.googleapis.com/auth/gmail.modify'
+    'https://www.googleapis.com/auth/gmail.modify',
+    'https://www.googleapis.com/auth/gmail.compose'
 ]
 
 
@@ -365,6 +367,56 @@ class GmailOAuth2Provider(EmailProvider):
             return base64.urlsafe_b64decode(data).decode('utf-8')
 
         return ""
+
+    def send_email(self, to_email: str, subject: str, body: str) -> bool:
+        """
+        Send an email.
+
+        Args:
+            to_email: Recipient email address
+            subject: Email subject
+            body: Email body (markdown/text)
+
+        Returns:
+            True if sent successfully
+        
+        Raises:
+            ProviderError: If sending fails
+        """
+        if not self.service:
+            raise ProviderError("Not authenticated. Call authenticate() first.")
+
+        try:
+            # Create the message
+            # We'll use HTML for better formatting since we're generating Markdown-like content
+            # Simple conversion: lines starting with # become Headers, - become bullets
+            
+            # Very basic markdown-to-html for now
+            html_body = body.replace("\n", "<br>")
+            html_body = html_body.replace("# ", "<h1>").replace("## ", "<h2>").replace("### ", "<h3>")
+            # Close headers (lazy way, assuming one per line) - actually let's just pre-wrap in div style
+            html_body = f"<div style='font-family: Arial, sans-serif;'>{html_body}</div>"
+
+            # Create message container
+            message = MIMEText(html_body, 'html')
+            message['to'] = to_email
+            message['from'] = "me"
+            message['subject'] = subject
+
+            # Encode the message
+            raw = base64.urlsafe_b64encode(message.as_bytes()).decode()
+            body = {'raw': raw}
+
+            # Send
+            message = self.service.users().messages().send(userId='me', body=body).execute()
+            
+            if self.logger:
+                self.logger.info(f"Sent email to {to_email} (ID: {message['id']})")
+                
+            return True
+
+        except Exception as e:
+            raise ProviderError(f"Failed to send email: {e}")
 
     def _get_or_create_label(self, label_name: str) -> str:
         """Get label ID, creating it if it doesn't exist."""

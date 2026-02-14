@@ -115,7 +115,6 @@ class EmailAnalyzer:
         promos_kept = []          # For "Product_Updates" (real updates)
         trash_count = 0           # For "Promotional"
 
-        # Regex compilation would happen here in a real app, keeping it simple for now
         import re
 
         for email in self.emails:
@@ -140,8 +139,6 @@ class EmailAnalyzer:
                         digest_articles.append(email)
                     
                     elif action == "summarize":
-                        # Group by "Category - Sender Domain" or just Category
-                        # Let's try to be smart: "OVH Cloud (5)"
                         key = cat_name
                         if "ovh" in email.sender.lower(): key = "OVH Infrastructure"
                         if "zoom" in email.sender.lower(): key = "Zoom Status"
@@ -159,7 +156,6 @@ class EmailAnalyzer:
                         trash_count += 1
 
             if not matched:
-                # Uncategorized - maybe list them for review?
                 pass
 
         # === GENERATE THE EMAIL BODY ===
@@ -170,27 +166,37 @@ class EmailAnalyzer:
         # 1. High Priority Digest (Dev Articles)
         if digest_articles:
             lines.append("## 📚 Reads for Today")
-            for email in digest_articles[:10]: # Limit to top 10
-                # Sanitize sender
+            # Sort by Sender
+            digest_articles.sort(key=lambda x: x.sender)
+            
+            current_sender = None
+            for email in digest_articles:
                 sender_name = email.sender.split('<')[0].strip('" ').strip()
-                lines.append(f"- **{sender_name}**: [{email.subject}](https://mail.google.com/mail/u/0/#inbox/{email.id})")
-            if len(digest_articles) > 10:
-                lines.append(f"*(and {len(digest_articles)-10} more...)*")
+                if sender_name != current_sender:
+                    lines.append(f"\n### {sender_name}")
+                    current_sender = sender_name
+                
+                lines.append(f"- [{email.subject}](https://mail.google.com/mail/u/0/#inbox/{email.id})")
             lines.append("")
 
-        # 2. Operational Summaries
+        # 2. Product Updates (Kept)
+        if promos_kept:
+            lines.append("## 🚀 Product Updates")
+            # Sort by Sender
+            promos_kept.sort(key=lambda x: x.sender)
+            
+            for email in promos_kept:
+                sender_name = email.sender.split('<')[0].strip('" ').strip()
+                # Highlight Google/Cloud
+                icon = "☁️" if "google" in sender_name.lower() or "cloud" in sender_name.lower() else "🔹"
+                lines.append(f"- {icon} **{sender_name}**: {email.subject}")
+            lines.append("")
+
+        # 3. Operational Summaries
         if summaries:
             lines.append("## 🛡️ Ops & Infrastructure")
             for k, v in summaries.items():
                 lines.append(f"- **{k}**: {v} events")
-            lines.append("")
-
-        # 3. Product Updates (Kept)
-        if promos_kept:
-            lines.append("## 🚀 Product Updates")
-            for email in promos_kept[:5]:
-                sender_name = email.sender.split('<')[0].strip('" ').strip()
-                lines.append(f"- **{sender_name}**: {email.subject}")
             lines.append("")
 
         # 4. Filter Stats
@@ -205,6 +211,7 @@ def main():
     parser.add_argument("--limit", type=int, default=200)
     parser.add_argument("--days", type=int, default=30)
     parser.add_argument("--simulate", action="store_true", help="Generate the email body without sending")
+    parser.add_argument("--send", action="store_true", help="Send the generated email to yourself")
     args = parser.parse_args()
 
     # Setup logger
@@ -228,18 +235,44 @@ def main():
     print(f"Fetching {args.limit} emails...")
     analyzer.fetch_history(days=args.days, limit=args.limit)
     
+    # Generate content
+    report = analyzer.analyze_actions("config/categories.json")
+    
     if args.simulate:
-        report = analyzer.analyze_actions("config/categories.json")
         print("\n" + "="*60)
         print(report)
         print("="*60 + "\n")
         
-        # Save to file for easy reading
         with open("morning_brief.md", "w", encoding="utf-8") as f:
             f.write(report)
         print("Draft saved to morning_brief.md")
-    else:
-        print("Please use --simulate to see the report.")
+        
+    if args.send:
+        print("Sending Morning Brief...")
+        # Get user email - provider probably knows it or we assume 'me'
+        # Gmail API 'me' alias works for authenticated user
+        
+        # Simple Markdown -> HTML conversion for the actual send
+        # (The provider now has rudimentary handling, but let's improve the text passed to it slightly if needed)
+        
+        subject = f"🌅 Morning Catch-Up: {datetime.now().strftime('%A, %b %d')}"
+        
+        try:
+            # We need to get the user's email address to send TO them
+            # We can just use 'me' usually, but better to be explicit if possible
+            # But the provider's send_email takes a 'to' address. 
+            # Let's try to get profile, or just use the one from config
+            user_profile = provider.service.users().getProfile(userId='me').execute()
+            user_email = user_profile['emailAddress']
+            
+            provider.send_email(to_email=user_email, subject=subject, body=report)
+            print(f"✅ Email sent successfully to {user_email}!")
+            
+        except Exception as e:
+            print(f"❌ Failed to send email: {e}")
+
+    if not args.simulate and not args.send:
+        print("Please use --simulate to preview or --send to deliver.")
 
 if __name__ == "__main__":
     main()

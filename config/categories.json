@@ -56,6 +56,8 @@
     "priority": 3,
     "action": "filter_marketing",
     "patterns": [
+      "google\\.com",
+      "google cloud",
       "monday\\.com",
       "warp\\.dev",
       "replit\\.com",
@@ -67,6 +69,9 @@
       "changelog"
     ],
     "senders": [
+      "CloudPlatform-noreply@google.com",
+      "GoogleCloudStartups@google.com",
+      "thekeyword-noreply@google.com",
       "team@use.mail.monday.com",
       "feedback+customerio@warp.dev",
       "contact@mail.replit.com",
