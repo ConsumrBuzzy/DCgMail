@@ -96,11 +96,11 @@ class EmailAnalyzer:
             "top_domains": domain_counts.most_common(50),
         }
 
-    def analyze_actions(self, categories_path: str) -> str:
+    def analyze_actions(self, categories_path: str, organize: bool = False, simulate: bool = False) -> str:
         """
-        Categorize emails based on config and generate a 'Morning Summary'.
+        Categorize emails, generate summary, and optionally organize (label/archive).
         """
-        self.logger.info("Generating Morning Summary...")
+        self.logger.info(f"Analyzing actions (Organize={organize}, Simulate={simulate})...")
         
         # Load categories
         try:
@@ -124,23 +124,14 @@ class EmailAnalyzer:
         promos_kept = []          # For "Product_Updates" (real updates)
         trash_count = 0           # For "Promotional"
 
+        # Track actions for report
+        actions_taken = []
+
         for email in self.emails:
             matched = False
             
-            # Special handling for daily.dev to extract articles
+            # Special handling for daily.dev
             if "daily.dev" in email.sender.lower() and "digest" in email.subject.lower():
-                # Parse body
-                # We need the body, but Email object might only have snippet
-                # Reread 'fetch' to ensure we get body? 
-                # GmailProvider _parse_email does extract body.
-                # But 'Email' struct doesn't have 'body' field in __init__? 
-                # Let's check 'src/providers/gmail_oauth_provider.py' _parse_email
-                # It calls _extract_body but does it save it?
-                # The Email dataclass definition isn't visible here, but let's assume I need to fetch it or it's there.
-                # Actually, check interfaces.py? No, let's just assume we need to add it or it exists.
-                # Wait, the Email class in interfaces.py probably doesn't have 'body'.
-                # I should probably add 'body' to Email class or just re-fetch here?
-                # Re-fetching is slow. Let's look at interfaces.py first.
                 pass 
                 
             # Check against categories
@@ -148,6 +139,8 @@ class EmailAnalyzer:
                 if matched: break
                 
                 action = rules.get("action", "none")
+                root_label = rules.get("root_label")
+                archive = rules.get("archive", False)
                 patterns = rules.get("patterns", [])
                 senders = rules.get("senders", [])
                 
@@ -158,41 +151,57 @@ class EmailAnalyzer:
                 if is_sender or is_pattern:
                     matched = True
                     
+                    # --- Data Collection for Email ---
                     if action == "digest":
-                        # If it's a daily.dev email, we want to PARSE it, not just list it.
                         if "daily.dev" in email.sender:
-                            # We need the full body. 
-                            # The 'Email' object from fetch_history might not have it if I didn't verify it.
-                            # In 'gmail_oauth_provider.py', the Email object is created.
-                            # Let's rely on the provider having put the body in... somewhere?
-                            # Actually, looking at previous view_file of gmail_oauth_provider, 
-                            # Email(id=..., sender=..., subject=..., snippet=..., timestamp=..., read=..., labels=...)
-                            # It DOES NOT store the body.
-                            # I need to modify the Email class and the Provider to store the body.
+                            # (We'll parse bodies later for the report)
                             pass
-
                         digest_articles.append({
                             "sender": email.sender,
                             "subject": email.subject,
                             "url": f"https://mail.google.com/mail/u/0/#inbox/{email.id}",
                             "timestamp": email.timestamp
                         })
-                    
                     elif action == "summarize":
                         key = cat_name
                         if "ovh" in email.sender.lower(): key = "OVH Infrastructure"
                         if "zoom" in email.sender.lower(): key = "Zoom Status"
                         if "convoso" in email.sender.lower(): key = "Convoso Ops"
                         summaries[key] += 1
-                        
                     elif action == "filter_marketing":
                         if re.search(r"welcome|last chance|webinar|join us", email.subject, re.IGNORECASE):
                             trash_count += 1
                         else:
                             promos_kept.append(email)
-                            
                     elif action == "trash":
                         trash_count += 1
+
+                    # --- Organization (Folders/Archiving) ---
+                    if organize or simulate:
+                        sender_clean = email.sender.split('<')[0].strip('" ').strip()
+                        # Sanitize sender name for folder (remove emails, weird chars)
+                        sender_clean = re.sub(r'[<>:"/\\|?*]', '', sender_clean).strip()
+                        if not sender_clean: sender_clean = "Unknown"
+
+                        if action == "trash":
+                            if simulate:
+                                actions_taken.append(f"[TRASH] {email.subject} ({email.sender})")
+                            else:
+                                self.provider.move_to_trash(email.id)
+                        
+                        elif root_label:
+                            # Construct dynamic label: Root/Sender
+                            full_label = f"{root_label}/{sender_clean}"
+                            
+                            if simulate:
+                                actions_taken.append(f"[MOVE] {email.subject} -> {full_label}")
+                            else:
+                                try:
+                                    self.provider.add_label(email.id, full_label)
+                                    if archive:
+                                        self.provider.archive_email(email.id)
+                                except Exception as e:
+                                    self.logger.error(f"Failed to organize email {email.id}: {e}")
 
             if not matched:
                 pass
@@ -201,49 +210,56 @@ class EmailAnalyzer:
         lines = []
         lines.append(f"# 🌅 Morning Catch-Up: {datetime.now().strftime('%A, %b %d')}")
         lines.append("")
+
+        if actions_taken:
+            lines.append("## 📂 Organization Log")
+            # Limit log to 10 entries if simulating to avoid spamming console
+            limit_log = 20
+            for action in actions_taken[:limit_log]:
+                lines.append(f"- {action}")
+            if len(actions_taken) > limit_log:
+                lines.append(f"- ... and {len(actions_taken) - limit_log} more actions.")
+            lines.append("")
         
         # 1. High Priority Digest (Dev Articles)
         if digest_articles:
             lines.append("## 📚 Reads for Today")
             
-            # Separate parsed vs generic
-            # Actually, I need to fetch bodies for daily.dev emails NOW.
-            # This is inefficient but safe: fetch the body if I need it.
-            # Or better: Update Email class to have 'body'.
-            # For now, I will use the provider to fetch the specific message body if it's daily.dev
-            
-            # Let's sort generic articles
-            digest_articles.sort(key=lambda x: x['sender'])
-            
+            # Use buckets for sorting
             parsed_articles = []
             generic_articles = []
             
+            # Sort generic first so we can dedup if needed (though we rely on sender)
+            digest_articles.sort(key=lambda x: x['sender'])
+
             for item in digest_articles:
                 if "daily.dev" in item['sender']:
-                     # Fetch body
+                     # Fetch body only if generic generation needs it or just relying on parser?
+                     # We fetch it here to populate the list
                      try:
-                         # Hacky access to provider
                          if hasattr(self.provider, 'service'):
+                             # Only fetch if we haven't already? 
+                             # This is expensive in a loop.
+                             # Optimization: Cache?
+                             # For now, just do it.
                              msg = self.provider.service.users().messages().get(userId='me', id=item['url'].split('/')[-1], format='full').execute()
                              body = self.provider._extract_body(msg['payload'])
                              parsed = parse_daily_dev(body)
                              for p in parsed:
                                  parsed_articles.append({
-                                     "sender": p['source'], # Use the extracted source!
+                                     "sender": p['source'],
                                      "subject": p['title'],
                                      "url": p['url'],
                                      "timestamp": item['timestamp']
                                  })
                      except Exception as e:
                          self.logger.error(f"Failed to parse daily.dev: {e}")
-                         # Fallback
                          generic_articles.append(item)
                 else:
                     generic_articles.append(item)
 
-            # Combine
             all_items = parsed_articles + generic_articles
-            # Unique by URL
+            # Dedup by URL
             unique = {x['url']: x for x in all_items}.values()
             all_items = sorted(list(unique), key=lambda x: x['sender'])
             
@@ -288,6 +304,7 @@ def main():
     parser.add_argument("--days", type=int, default=30)
     parser.add_argument("--simulate", action="store_true", help="Generate the email body without sending")
     parser.add_argument("--send", action="store_true", help="Send the generated email to yourself")
+    parser.add_argument("--organize", action="store_true", help="Organize emails into folders (apply labels/archive)")
     args = parser.parse_args()
 
     # Setup logger
@@ -312,7 +329,7 @@ def main():
     analyzer.fetch_history(days=args.days, limit=args.limit)
     
     # Generate content
-    report = analyzer.analyze_actions("config/categories.json")
+    report = analyzer.analyze_actions("config/categories.json", organize=args.organize, simulate=args.simulate)
     
     if args.simulate:
         print("\n" + "="*60)
