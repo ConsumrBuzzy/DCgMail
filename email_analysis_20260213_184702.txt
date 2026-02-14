@@ -1,0 +1,131 @@
+======================================================================
+DCGMail Email History Analysis
+======================================================================
+
+Total Emails Analyzed: 50
+Analysis Date: 2026-02-13 18:47:02
+
+======================================================================
+TOP SENDERS
+======================================================================
+  10  OVHcloud Status <no-reply@status-ovhcloud.com>
+   4  no-reply@zoomstatus.com
+   3  "monday.com" <team@learn.mail.monday.com>
+   2  Neo Kim <systemdesignone@substack.com>
+   2  "daily.dev" <informer@daily.dev>
+   2  CoinGecko <hello@coingecko.com>
+   2  Medium Daily Digest <noreply@medium.com>
+   2  "monday.com" <team@use.mail.monday.com>
+   2  Convoso <no-reply@convoso.com>
+   2  Petra from Warp <feedback+customerio@warp.dev>
+
+======================================================================
+TOP DOMAINS
+======================================================================
+  10  status-ovhcloud.com
+   4  zoomstatus.com
+   4  medium.com
+   3  learn.mail.monday.com
+   3  google.com
+   2  substack.com
+   2  daily.dev
+   2  coingecko.com
+   2  use.mail.monday.com
+   2  convoso.com
+
+======================================================================
+TOP SUBJECT KEYWORDS
+======================================================================
+  15  2026
+  13  february
+  12  maintenance
+  10  public
+  10  cloud
+   9  incident
+   9  notification
+   8  zoom
+   8  your
+   6  service
+   4  degradation
+   4  affecting
+   4  load
+   4  balancer
+   4  build
+   3  agent
+   3  with
+   3  from
+   3  ready
+   3  [gra1][network]
+
+======================================================================
+COMMON SUBJECT PREFIXES
+======================================================================
+   1  [Product Update]
+
+======================================================================
+SAMPLE SUBJECTS (First 20)
+======================================================================
+  - Zoom Incident - Service Degradation Affecting Zoom Virtual Agent for a Subset of users in North America - 13 February 2026
+  - Zoom Incident - Service Degradation Affecting Zoom Virtual Agent for a Subset of users in North America - 13 February 2026
+  - Let AI handle the busywork
+  - Introducing Gemini 3 Deep Think
+  - Hello darkness, my old friend
+  - Public Cloud Maintenance - [GRA9][Containers & Orchestration] - Load Balancer maintenance notification - 5 March 2026
+  - If you’re just getting started with AI, learn these 10 concepts
+  - Robert, your personal update from daily.dev is ready
+  - 🦎🚀 Aave DAO gets the whole pie? 💰
+  - 12 Docker Best Practices Every Developer Should Follow in Production 🐳🚀 | Hemanth Raju in Python in Plain English
+  - Get your team sprint ready
+  - Lead Drips: BURNT OSD - 20 calls or more
+  - Build your first Oz agent in under 10 minutes
+  - You have 2 new messages
+  - Model Deprecation Notice: SWE-1, Sonnet 3.5, Sonnet 3.7 & Haiku 3.5 (Effective Feb 19)
+
+  - How Do LLMs Work?
+  - Choose how you see your work
+  - Bulk Download 37 books in "Computer Science"
+  - Medium Earnings Dropped After November 2025?
+  - Tomorrow: Mobile Builder Spotlight + Office Hours
+
+======================================================================
+EMAIL PATTERNS
+======================================================================
+
+Emails by Hour:
+  00:00    2  #
+  01:00    2  #
+  02:00    1  
+  04:00    4  ##
+  06:00    4  ##
+  07:00    1  
+  08:00    4  ##
+  09:00    1  
+  10:00    4  ##
+  11:00    2  #
+  12:00    1  
+  13:00    1  
+  14:00    1  
+  15:00    6  ###
+  16:00    5  ##
+  17:00    2  #
+  18:00    3  #
+  19:00    4  ##
+  20:00    2  #
+
+Emails by Weekday:
+  Monday       0  
+  Tuesday      0  
+  Wednesday   13  ##
+  Thursday    25  #####
+  Friday      12  ##
+  Saturday     0  
+  Sunday       0  
+
+======================================================================
+
+Next Steps:
+  1. Review the analysis above
+  2. Identify patterns you want to categorize
+  3. Use the data to build filters in config/categories.json
+  4. Run: python main.py --dry-run --limit 10
+======================================================================
