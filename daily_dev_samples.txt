@@ -1,0 +1,293 @@
+=== SUBJECT: Robert, your personal update from daily.dev is ready ===
+=== DATE: 2026-02-13 08:00:20 ===
+*******
+For you
+*******
+
+​Feb 13, 2026
+
+Logo ( https://app.daily.dev/ )
+
+It’s been 10 days since your last streak
+------------------------------------------
+
+You might find these articles interesting
+
+( https://app.daily.dev/posts/nLqAJGqtR?utm_source=notification&utm_medium=email&utm_campaign=digest )
+
+Tech World With Milan ( https://app.daily.dev/posts/nLqAJGqtR?utm_source=notification&utm_medium=email&utm_campaign=digest )
+
+Learn fundamentals, not
+frameworks ( https://app.daily.dev/posts/nLqAJGqtR?utm_source=notification&utm_medium=email&utm_campaign=digest )​
+--------------------------------------------------------------------------------------------------------------------
+
+Read more → ( https://app.daily.dev/posts/nLqAJGqtR?utm_source=notification&utm_medium=email&utm_campaign=digest ) ( https://app.daily.dev/posts/nLqAJGqtR?utm_source=notification&utm_medium=email&utm_campaign=digest )
+
+( https://app.daily.dev/posts/r4TGURizp?utm_source=notification&utm_medium=email&utm_campaign=digest )
+
+Zed ( https://app.daily.dev/posts/r4TGURizp?utm_source=notification&utm_medium=email&utm_campaign=digest )
+
+Introducing Theme Builder — Zed's
+Blog ( https://app.daily.dev/posts/r4TGURizp?utm_source=notification&utm_medium=email&utm_campaign=digest )​
+--------------------------------------------------------------------------------------------------------------
+
+Read more → ( https://app.daily.dev/posts/r4TGURizp?utm_source=notification&utm_medium=email&utm_campaign=digest ) ( https://app.daily.dev/posts/r4TGURizp?utm_source=notification&utm_medium=email&utm_campaign=digest )
+
+( https://api.daily.dev/v2/c?id=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJPYmplY3QiOnsiaSI6ImFlMjY1NTM1LTU1ZWEtNDgxMi1iODRmLTU0NWM0YzAyNDVlYyIsInUiOiJodHRwczovL2NvZGVyYWJiaXQubGluay9kYWlseSIsImFpIjoiNTMwOTMxMWEtYWFhZi00NjdiLTg2MzQtNzA5OTk3OTI4ODI2IiwiYyI6IjIxMmQ5NmU0LTExYjktNGE4Mi04NmU2LTBmMjk5OWI2NmQwZCIsImEiOiIxMzMzYTc0Yi02ZWIxLTQxNjgtOWU1Mi0yZWJiNWQ5MDljYjciLCJ0aWQiOiIyZjc5NWYxMS0zMzIwLTQ1ZDYtOTBhZi1kMTFhZTM3MDJlODEiLCJ0aWRzIjpbIjJmNzk1ZjExLTMzMjAtNDVkNi05MGFmLWQxMWFlMzcwMmU4MSJdLCJjciI6IjI2NTdjZWFkLWNkZTgtNDEwYi04ZmI4LTAwMTQ1NjU2ZjgzYiIsInVzIjoiWkNpMkZFczFJZkczVkNGQkxTUnZjIiwidCI6MTc3MDk4MDg1MH19.0we3ZxQ7ibsaPHMuWGQqXlHlqwkU3gg7OaCRDgt23OM )
+
+CodeRabbit · Ad ( https://api.daily.dev/v2/c?id=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJPYmplY3QiOnsiaSI6ImFlMjY1NTM1LTU1ZWEtNDgxMi1iODRmLTU0NWM0YzAyNDVlYyIsInUiOiJodHRwczovL2NvZGVyYWJiaXQubGluay9kYWlseSIsImFpIjoiNTMwOTMxMWEtYWFhZi00NjdiLTg2MzQtNzA5OTk3OTI4ODI2IiwiYyI6IjIxMmQ5NmU0LTExYjktNGE4Mi04NmU2LTBmMjk5OWI2NmQwZCIsImEiOiIxMzMzYTc0Yi02ZWIxLTQxNjgtOWU1Mi0yZWJiNWQ5MDljYjciLCJ0aWQiOiIyZjc5NWYxMS0zMzIwLTQ1ZDYtOTBhZi1kMTFhZTM3MDJlODEiLCJ0aWRzIjpbIjJmNzk1ZjExLTMzMjAtNDVkNi05MGFmLWQxMWFlMzcwMmU4MSJdLCJjciI6IjI2NTdjZWFkLWNkZTgtNDEwYi04ZmI4LTAwMTQ1NjU2ZjgzYiIsInVzIjoiWkNpMkZFczFJZkczVkNGQkxTUnZjIiwidCI6MTc3MDk4MDg1MH19.0we3ZxQ7ibsaPHMuWGQqXlHlqwkU3gg7OaCRDgt23OM )
+
+Cut Code Review Time & Bugs in Half. Supports TypeScript, Python, Java and more. ( https://api.daily.dev/v2/c?id=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJPYmplY3QiOnsiaSI6ImFlMjY1NTM1LTU1ZWEtNDgxMi1iODRmLTU0NWM0YzAyNDVlYyIsInUiOiJodHRwczovL2NvZGVyYWJiaXQubGluay9kYWlseSIsImFpIjoiNTMwOTMxMWEtYWFhZi00NjdiLTg2MzQtNzA5OTk3OTI4ODI2IiwiYyI6IjIxMmQ5NmU0LTExYjktNGE4Mi04NmU2LTBmMjk5OWI2NmQwZCIsImEiOiIxMzMzYTc0Yi02ZWIxLTQxNjgtOWU1Mi0yZWJiNWQ5MDljYjciLCJ0aWQiOiIyZjc5NWYxMS0zMzIwLTQ1ZDYtOTBhZi1kMTFhZTM3MDJlODEiLCJ0aWRzIjpbIjJmNzk1ZjExLTMzMjAtNDVkNi05MGFmLWQxMWFlMzcwMmU4MSJdLCJjciI6IjI2NTdjZWFkLWNkZTgtNDEwYi04ZmI4LTAwMTQ1NjU2ZjgzYiIsInVzIjoiWkNpMkZFczFJZkczVkNGQkxTUnZjIiwidCI6MTc3MDk4MDg1MH19.0we3ZxQ7ibsaPHMuWGQqXlHlqwkU3gg7OaCRDgt23OM )​
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Get Started Today ( https://api.daily.dev/v2/c?id=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJPYmplY3QiOnsiaSI6ImFlMjY1NTM1LTU1ZWEtNDgxMi1iODRmLTU0NWM0YzAyNDVlYyIsInUiOiJodHRwczovL2NvZGVyYWJiaXQubGluay9kYWlseSIsImFpIjoiNTMwOTMxMWEtYWFhZi00NjdiLTg2MzQtNzA5OTk3OTI4ODI2IiwiYyI6IjIxMmQ5NmU0LTExYjktNGE4Mi04NmU2LTBmMjk5OWI2NmQwZCIsImEiOiIxMzMzYTc0Yi02ZWIxLTQxNjgtOWU1Mi0yZWJiNWQ5MDljYjciLCJ0aWQiOiIyZjc5NWYxMS0zMzIwLTQ1ZDYtOTBhZi1kMTFhZTM3MDJlODEiLCJ0aWRzIjpbIjJmNzk1ZjExLTMzMjAtNDVkNi05MGFmLWQxMWFlMzcwMmU4MSJdLCJjciI6IjI2NTdjZWFkLWNkZTgtNDEwYi04ZmI4LTAwMTQ1NjU2ZjgzYiIsInVzIjoiWkNpMkZFczFJZkczVkNGQkxTUnZjIiwidCI6MTc3MDk4MDg1MH19.0we3ZxQ7ibsaPHMuWGQqXlHlqwkU3gg7OaCRDgt23OM ) 
+( https://api.daily.dev/v2/c?id=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJPYmplY3QiOnsiaSI6ImFlMjY1NTM1LTU1ZWEtNDgxMi1iODRmLTU0NWM0YzAyNDVlYyIsInUiOiJodHRwczovL2NvZGVyYWJiaXQubGluay9kYWlseSIsImFpIjoiNTMwOTMxMWEtYWFhZi00NjdiLTg2MzQtNzA5OTk3OTI4ODI2IiwiYyI6IjIxMmQ5NmU0LTExYjktNGE4Mi04NmU2LTBmMjk5OWI2NmQwZCIsImEiOiIxMzMzYTc0Yi02ZWIxLTQxNjgtOWU1Mi0yZWJiNWQ5MDljYjciLCJ0aWQiOiIyZjc5NWYxMS0zMzIwLTQ1ZDYtOTBhZi1kMTFhZTM3MDJlODEiLCJ0aWRzIjpbIjJmNzk1ZjExLTMzMjAtNDVkNi05MGFmLWQxMWFlMzcwMmU4MSJdLCJjciI6IjI2NTdjZWFkLWNkZTgtNDEwYi04ZmI4LTAwMTQ1NjU2ZjgzYiIsInVzIjoiWkNpMkZFczFJZkczVkNGQkxTUnZjIiwidCI6MTc3MDk4MDg1MH19.0we3ZxQ7ibsaPHMuWGQqXlHlqwkU3gg7OaCRDgt23OM )
+
+( https://app.daily.dev/posts/QPtPJqpHS?utm_source=notification&utm_medium=email&utm_campaign=digest )
+
+Collections ( https://app.daily.dev/posts/QPtPJqpHS?utm_source=notification&utm_medium=email&utm_campaign=digest )
+
+Exploring WebMCP: A New Standard for AI Agent and Website
+Interaction ( https://app.daily.dev/posts/QPtPJqpHS?utm_source=notification&utm_medium=email&utm_campaign=digest )​
+---------------------------------------------------------------------------------------------------------------------
+
+Read more → ( https://app.daily.dev/posts/QPtPJqpHS?utm_source=notification&utm_medium=email&utm_campaign=digest ) ( https://app.daily.dev/posts/QPtPJqpHS?utm_source=notification&utm_medium=email&utm_campaign=digest )
+
+( https://app.daily.dev/posts/I3ypH3GAN?utm_source=notification&utm_medium=email&utm_campaign=digest )
+
+Frontend Masters ( https://app.daily.dev/posts/I3ypH3GAN?utm_source=notification&utm_medium=email&utm_campaign=digest )
+
+jQuery 4 – Frontend Masters
+Blog ( https://app.daily.dev/posts/I3ypH3GAN?utm_source=notification&utm_medium=email&utm_campaign=digest )​
+--------------------------------------------------------------------------------------------------------------
+
+Read more → ( https://app.daily.dev/posts/I3ypH3GAN?utm_source=notification&utm_medium=email&utm_campaign=digest ) ( https://app.daily.dev/posts/I3ypH3GAN?utm_source=notification&utm_medium=email&utm_campaign=digest )
+
+( https://app.daily.dev/posts/FmQJqAcCS?utm_source=notification&utm_medium=email&utm_campaign=digest )
+
+freeCodeCamp ( https://app.daily.dev/posts/FmQJqAcCS?utm_source=notification&utm_medium=email&utm_campaign=digest )
+
+The Modern React Data Fetching Handbook: Suspense, use(),
+and ErrorBoundary Explained ( https://app.daily.dev/posts/FmQJqAcCS?utm_source=notification&utm_medium=email&utm_campaign=digest )​
+-------------------------------------------------------------------------------------------------------------------------------------
+
+Read more → ( https://app.daily.dev/posts/FmQJqAcCS?utm_source=notification&utm_medium=email&utm_campaign=digest ) ( https://app.daily.dev/posts/FmQJqAcCS?utm_source=notification&utm_medium=email&utm_campaign=digest )
+
+Fast-track your growth. Upgrade to plus ( https://app.daily.dev/plus )
+
+Try daily.dev on mobile (if you haven’t yet)
+
+( https://apps.apple.com/app/daily-dev/id6740634400 )
+daily.dev for iOS ( https://apps.apple.com/app/daily-dev/id6740634400 )
+
+( https://play.google.com/store/apps/details?id=dev.daily )
+daily.dev for Android ( https://play.google.com/store/apps/details?id=dev.daily )
+
+Explore ( https://app.daily.dev/posts )   |   Discussions ( https://app.daily.dev/discussed )   |   Tags ( https://app.daily.dev/tags )   |   Sources ( https://app.daily.dev/sources )   |   Leaderboard ( https://app.daily.dev/users )
+
+X ( https://twitter.com/dailydotdev ) Yt ( https://www.youtube.com/c/dailydev )
+Inst ( https://www.instagram.com/dailydotdev/ ) Tt ( https://www.tiktok.com/@dailydotdev )
+GitHub ( https://github.com/dailydotdev/daily )
+This email was intended for Robert Dugger (robert.d@consumrbuzz.com)
+You can update your profile settings to change notifications ( https://app.daily.dev/account/notifications ), account details ( https://app.daily.dev/account/profile ) or unsubscribe ( https://track.customer.io/manage_subscription_preferences/RLnCCQUAAZxWr0Gk8kwWrUKf8hP84w== ) 
+
+( https://app.daily.dev )Daily Dev Ltd., 9 Derech HaTikva Ganei Tikva, Israel
+5591252
+
+==================================================
+
+=== SUBJECT: Robert, your personal update from daily.dev is ready ===
+=== DATE: 2026-02-12 08:00:44 ===
+*******
+For you
+*******
+
+​Feb 12, 2026
+
+Logo ( https://app.daily.dev/ )
+
+It’s been 9 days since your last streak
+-----------------------------------------
+
+You might find these articles interesting
+
+( https://app.daily.dev/posts/BCpS13qll?utm_source=notification&utm_medium=email&utm_campaign=digest )
+
+Typescript ( https://app.daily.dev/posts/BCpS13qll?utm_source=notification&utm_medium=email&utm_campaign=digest )
+
+Announcing TypeScript 6.0
+Beta ( https://app.daily.dev/posts/BCpS13qll?utm_source=notification&utm_medium=email&utm_campaign=digest )​
+--------------------------------------------------------------------------------------------------------------
+
+Read more → ( https://app.daily.dev/posts/BCpS13qll?utm_source=notification&utm_medium=email&utm_campaign=digest ) ( https://app.daily.dev/posts/BCpS13qll?utm_source=notification&utm_medium=email&utm_campaign=digest )
+
+( https://app.daily.dev/posts/TLCAN9s03?utm_source=notification&utm_medium=email&utm_campaign=digest )
+
+daily.dev Changelog ( https://app.daily.dev/posts/TLCAN9s03?utm_source=notification&utm_medium=email&utm_campaign=digest )
+
+Achievement Unlocked: Your Professional Side Quest
+Begins ( https://app.daily.dev/posts/TLCAN9s03?utm_source=notification&utm_medium=email&utm_campaign=digest )​
+----------------------------------------------------------------------------------------------------------------
+
+Read more → ( https://app.daily.dev/posts/TLCAN9s03?utm_source=notification&utm_medium=email&utm_campaign=digest ) ( https://app.daily.dev/posts/TLCAN9s03?utm_source=notification&utm_medium=email&utm_campaign=digest )
+
+( https://api.daily.dev/v2/c?id=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJPYmplY3QiOnsiaSI6IjY0MjRlYTJmLWI5Y2YtNGU1Yi04OWJjLWQxNDc5NDQ1Y2U1ZSIsInUiOiJodHRwczovL2NvZGVyYWJiaXQubGluay9kYWlseSIsImFpIjoiNTMwOTMxMWEtYWFhZi00NjdiLTg2MzQtNzA5OTk3OTI4ODI2IiwiYyI6IjIxMmQ5NmU0LTExYjktNGE4Mi04NmU2LTBmMjk5OWI2NmQwZCIsImEiOiIxMzMzYTc0Yi02ZWIxLTQxNjgtOWU1Mi0yZWJiNWQ5MDljYjciLCJ0aWQiOiIyZjc5NWYxMS0zMzIwLTQ1ZDYtOTBhZi1kMTFhZTM3MDJlODEiLCJ0aWRzIjpbIjJmNzk1ZjExLTMzMjAtNDVkNi05MGFmLWQxMWFlMzcwMmU4MSJdLCJjciI6IjI2NTdjZWFkLWNkZTgtNDEwYi04ZmI4LTAwMTQ1NjU2ZjgzYiIsInVzIjoiWkNpMkZFczFJZkczVkNGQkxTUnZjIiwidCI6MTc3MDg5NDQ0N319._ImLzPJ7gV459YDObl7_QNdnaFHy3GwfcdFpaJvxhgA )
+
+CodeRabbit · Ad ( https://api.daily.dev/v2/c?id=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJPYmplY3QiOnsiaSI6IjY0MjRlYTJmLWI5Y2YtNGU1Yi04OWJjLWQxNDc5NDQ1Y2U1ZSIsInUiOiJodHRwczovL2NvZGVyYWJiaXQubGluay9kYWlseSIsImFpIjoiNTMwOTMxMWEtYWFhZi00NjdiLTg2MzQtNzA5OTk3OTI4ODI2IiwiYyI6IjIxMmQ5NmU0LTExYjktNGE4Mi04NmU2LTBmMjk5OWI2NmQwZCIsImEiOiIxMzMzYTc0Yi02ZWIxLTQxNjgtOWU1Mi0yZWJiNWQ5MDljYjciLCJ0aWQiOiIyZjc5NWYxMS0zMzIwLTQ1ZDYtOTBhZi1kMTFhZTM3MDJlODEiLCJ0aWRzIjpbIjJmNzk1ZjExLTMzMjAtNDVkNi05MGFmLWQxMWFlMzcwMmU4MSJdLCJjciI6IjI2NTdjZWFkLWNkZTgtNDEwYi04ZmI4LTAwMTQ1NjU2ZjgzYiIsInVzIjoiWkNpMkZFczFJZkczVkNGQkxTUnZjIiwidCI6MTc3MDg5NDQ0N319._ImLzPJ7gV459YDObl7_QNdnaFHy3GwfcdFpaJvxhgA )
+
+Cut Code Review Time & Bugs in Half. Supports TypeScript, Python, Java and more. ( https://api.daily.dev/v2/c?id=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJPYmplY3QiOnsiaSI6IjY0MjRlYTJmLWI5Y2YtNGU1Yi04OWJjLWQxNDc5NDQ1Y2U1ZSIsInUiOiJodHRwczovL2NvZGVyYWJiaXQubGluay9kYWlseSIsImFpIjoiNTMwOTMxMWEtYWFhZi00NjdiLTg2MzQtNzA5OTk3OTI4ODI2IiwiYyI6IjIxMmQ5NmU0LTExYjktNGE4Mi04NmU2LTBmMjk5OWI2NmQwZCIsImEiOiIxMzMzYTc0Yi02ZWIxLTQxNjgtOWU1Mi0yZWJiNWQ5MDljYjciLCJ0aWQiOiIyZjc5NWYxMS0zMzIwLTQ1ZDYtOTBhZi1kMTFhZTM3MDJlODEiLCJ0aWRzIjpbIjJmNzk1ZjExLTMzMjAtNDVkNi05MGFmLWQxMWFlMzcwMmU4MSJdLCJjciI6IjI2NTdjZWFkLWNkZTgtNDEwYi04ZmI4LTAwMTQ1NjU2ZjgzYiIsInVzIjoiWkNpMkZFczFJZkczVkNGQkxTUnZjIiwidCI6MTc3MDg5NDQ0N319._ImLzPJ7gV459YDObl7_QNdnaFHy3GwfcdFpaJvxhgA )​
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Get Started Today ( https://api.daily.dev/v2/c?id=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJPYmplY3QiOnsiaSI6IjY0MjRlYTJmLWI5Y2YtNGU1Yi04OWJjLWQxNDc5NDQ1Y2U1ZSIsInUiOiJodHRwczovL2NvZGVyYWJiaXQubGluay9kYWlseSIsImFpIjoiNTMwOTMxMWEtYWFhZi00NjdiLTg2MzQtNzA5OTk3OTI4ODI2IiwiYyI6IjIxMmQ5NmU0LTExYjktNGE4Mi04NmU2LTBmMjk5OWI2NmQwZCIsImEiOiIxMzMzYTc0Yi02ZWIxLTQxNjgtOWU1Mi0yZWJiNWQ5MDljYjciLCJ0aWQiOiIyZjc5NWYxMS0zMzIwLTQ1ZDYtOTBhZi1kMTFhZTM3MDJlODEiLCJ0aWRzIjpbIjJmNzk1ZjExLTMzMjAtNDVkNi05MGFmLWQxMWFlMzcwMmU4MSJdLCJjciI6IjI2NTdjZWFkLWNkZTgtNDEwYi04ZmI4LTAwMTQ1NjU2ZjgzYiIsInVzIjoiWkNpMkZFczFJZkczVkNGQkxTUnZjIiwidCI6MTc3MDg5NDQ0N319._ImLzPJ7gV459YDObl7_QNdnaFHy3GwfcdFpaJvxhgA ) 
+( https://api.daily.dev/v2/c?id=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJPYmplY3QiOnsiaSI6IjY0MjRlYTJmLWI5Y2YtNGU1Yi04OWJjLWQxNDc5NDQ1Y2U1ZSIsInUiOiJodHRwczovL2NvZGVyYWJiaXQubGluay9kYWlseSIsImFpIjoiNTMwOTMxMWEtYWFhZi00NjdiLTg2MzQtNzA5OTk3OTI4ODI2IiwiYyI6IjIxMmQ5NmU0LTExYjktNGE4Mi04NmU2LTBmMjk5OWI2NmQwZCIsImEiOiIxMzMzYTc0Yi02ZWIxLTQxNjgtOWU1Mi0yZWJiNWQ5MDljYjciLCJ0aWQiOiIyZjc5NWYxMS0zMzIwLTQ1ZDYtOTBhZi1kMTFhZTM3MDJlODEiLCJ0aWRzIjpbIjJmNzk1ZjExLTMzMjAtNDVkNi05MGFmLWQxMWFlMzcwMmU4MSJdLCJjciI6IjI2NTdjZWFkLWNkZTgtNDEwYi04ZmI4LTAwMTQ1NjU2ZjgzYiIsInVzIjoiWkNpMkZFczFJZkczVkNGQkxTUnZjIiwidCI6MTc3MDg5NDQ0N319._ImLzPJ7gV459YDObl7_QNdnaFHy3GwfcdFpaJvxhgA )
+
+( https://app.daily.dev/posts/7PMdKdMDn?utm_source=notification&utm_medium=email&utm_campaign=digest )
+
+Amit yadav ( https://app.daily.dev/posts/7PMdKdMDn?utm_source=notification&utm_medium=email&utm_campaign=digest )
+
+Ultra-lightweight, semantic, zero-dependency HTML UI
+component library ( https://app.daily.dev/posts/7PMdKdMDn?utm_source=notification&utm_medium=email&utm_campaign=digest )​
+---------------------------------------------------------------------------------------------------------------------------
+
+Read more → ( https://app.daily.dev/posts/7PMdKdMDn?utm_source=notification&utm_medium=email&utm_campaign=digest ) ( https://app.daily.dev/posts/7PMdKdMDn?utm_source=notification&utm_medium=email&utm_campaign=digest )
+
+( https://app.daily.dev/posts/waJpUtc5V?utm_source=notification&utm_medium=email&utm_campaign=digest )
+
+Work Chronicles ( https://app.daily.dev/posts/waJpUtc5V?utm_source=notification&utm_medium=email&utm_campaign=digest )
+
+(comic) Why AI Won't Replace
+Everyone ( https://app.daily.dev/posts/waJpUtc5V?utm_source=notification&utm_medium=email&utm_campaign=digest )​
+------------------------------------------------------------------------------------------------------------------
+
+Read more → ( https://app.daily.dev/posts/waJpUtc5V?utm_source=notification&utm_medium=email&utm_campaign=digest ) ( https://app.daily.dev/posts/waJpUtc5V?utm_source=notification&utm_medium=email&utm_campaign=digest )
+
+( https://app.daily.dev/posts/aSPqQT6lM?utm_source=notification&utm_medium=email&utm_campaign=digest )
+
+Reinier ( https://app.daily.dev/posts/aSPqQT6lM?utm_source=notification&utm_medium=email&utm_campaign=digest )
+
+Next.js 16 project – Build a FREE & Uncensored AI Image
+Generator SaaS App - Neon, Modal, Z-Image ( https://app.daily.dev/posts/aSPqQT6lM?utm_source=notification&utm_medium=email&utm_campaign=digest )​
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+Read more → ( https://app.daily.dev/posts/aSPqQT6lM?utm_source=notification&utm_medium=email&utm_campaign=digest ) ( https://app.daily.dev/posts/aSPqQT6lM?utm_source=notification&utm_medium=email&utm_campaign=digest )
+
+Fast-track your growth. Upgrade to plus ( https://app.daily.dev/plus )
+
+Try daily.dev on mobile (if you haven’t yet)
+
+( https://apps.apple.com/app/daily-dev/id6740634400 )
+daily.dev for iOS ( https://apps.apple.com/app/daily-dev/id6740634400 )
+
+( https://play.google.com/store/apps/details?id=dev.daily )
+daily.dev for Android ( https://play.google.com/store/apps/details?id=dev.daily )
+
+Explore ( https://app.daily.dev/posts )   |   Discussions ( https://app.daily.dev/discussed )   |   Tags ( https://app.daily.dev/tags )   |   Sources ( https://app.daily.dev/sources )   |   Leaderboard ( https://app.daily.dev/users )
+
+X ( https://twitter.com/dailydotdev ) Yt ( https://www.youtube.com/c/dailydev )
+Inst ( https://www.instagram.com/dailydotdev/ ) Tt ( https://www.tiktok.com/@dailydotdev )
+GitHub ( https://github.com/dailydotdev/daily )
+This email was intended for Robert Dugger (robert.d@consumrbuzz.com)
+You can update your profile settings to change notifications ( https://app.daily.dev/account/notifications ), account details ( https://app.daily.dev/account/profile ) or unsubscribe ( https://track.customer.io/manage_subscription_preferences/RLnCCQUAAZxRiNyL3TBWNJbzEPG2ew== ) 
+
+( https://app.daily.dev )Daily Dev Ltd., 9 Derech HaTikva Ganei Tikva, Israel
+5591252
+
+==================================================
+
+=== SUBJECT: Robert, your personal update from daily.dev is ready ===
+=== DATE: 2026-02-11 08:00:55 ===
+*******
+For you
+*******
+
+​Feb 11, 2026
+
+Logo ( https://app.daily.dev/ )
+
+It’s been 8 days since your last streak
+-----------------------------------------
+
+You might find these articles interesting
+
+( https://app.daily.dev/posts/LaCiVvkgn?utm_source=notification&utm_medium=email&utm_campaign=digest )
+
+Go ( https://app.daily.dev/posts/LaCiVvkgn?utm_source=notification&utm_medium=email&utm_campaign=digest )
+
+Go 1.26 is released ( https://app.daily.dev/posts/LaCiVvkgn?utm_source=notification&utm_medium=email&utm_campaign=digest )​
+-----------------------------------------------------------------------------------------------------------------------------
+
+Read more → ( https://app.daily.dev/posts/LaCiVvkgn?utm_source=notification&utm_medium=email&utm_campaign=digest ) ( https://app.daily.dev/posts/LaCiVvkgn?utm_source=notification&utm_medium=email&utm_campaign=digest )
+
+( https://app.daily.dev/posts/VRcQzPuNQ?utm_source=notification&utm_medium=email&utm_campaign=digest )
+
+Laravel News ( https://app.daily.dev/posts/VRcQzPuNQ?utm_source=notification&utm_medium=email&utm_campaign=digest )
+
+Driver-Based Architecture in Spatie's Laravel PDF
+v2 ( https://app.daily.dev/posts/VRcQzPuNQ?utm_source=notification&utm_medium=email&utm_campaign=digest )​
+------------------------------------------------------------------------------------------------------------
+
+Read more → ( https://app.daily.dev/posts/VRcQzPuNQ?utm_source=notification&utm_medium=email&utm_campaign=digest ) ( https://app.daily.dev/posts/VRcQzPuNQ?utm_source=notification&utm_medium=email&utm_campaign=digest )
+
+( https://api.daily.dev/v2/c?id=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJPYmplY3QiOnsiaSI6IjQxYmM3ZTk1LTAwOTAtNDYyMC04NDM4LTc2NzBmNzQxYzFjOSIsInUiOiJodHRwczovL2NvZGVyYWJiaXQubGluay9kYWlseSIsImFpIjoiNTMwOTMxMWEtYWFhZi00NjdiLTg2MzQtNzA5OTk3OTI4ODI2IiwiYyI6IjIxMmQ5NmU0LTExYjktNGE4Mi04NmU2LTBmMjk5OWI2NmQwZCIsImEiOiIxMzMzYTc0Yi02ZWIxLTQxNjgtOWU1Mi0yZWJiNWQ5MDljYjciLCJ0aWQiOiIyZjc5NWYxMS0zMzIwLTQ1ZDYtOTBhZi1kMTFhZTM3MDJlODEiLCJ0aWRzIjpbIjJmNzk1ZjExLTMzMjAtNDVkNi05MGFmLWQxMWFlMzcwMmU4MSJdLCJjciI6IjI2NTdjZWFkLWNkZTgtNDEwYi04ZmI4LTAwMTQ1NjU2ZjgzYiIsInVzIjoiWkNpMkZFczFJZkczVkNGQkxTUnZjIiwidCI6MTc3MDgwODA1OX19.Od6C6wqpQaijWlMJC0I8JD-NhN0Dhmy9fKZ6oHDy4qU )
+
+CodeRabbit · Ad ( https://api.daily.dev/v2/c?id=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJPYmplY3QiOnsiaSI6IjQxYmM3ZTk1LTAwOTAtNDYyMC04NDM4LTc2NzBmNzQxYzFjOSIsInUiOiJodHRwczovL2NvZGVyYWJiaXQubGluay9kYWlseSIsImFpIjoiNTMwOTMxMWEtYWFhZi00NjdiLTg2MzQtNzA5OTk3OTI4ODI2IiwiYyI6IjIxMmQ5NmU0LTExYjktNGE4Mi04NmU2LTBmMjk5OWI2NmQwZCIsImEiOiIxMzMzYTc0Yi02ZWIxLTQxNjgtOWU1Mi0yZWJiNWQ5MDljYjciLCJ0aWQiOiIyZjc5NWYxMS0zMzIwLTQ1ZDYtOTBhZi1kMTFhZTM3MDJlODEiLCJ0aWRzIjpbIjJmNzk1ZjExLTMzMjAtNDVkNi05MGFmLWQxMWFlMzcwMmU4MSJdLCJjciI6IjI2NTdjZWFkLWNkZTgtNDEwYi04ZmI4LTAwMTQ1NjU2ZjgzYiIsInVzIjoiWkNpMkZFczFJZkczVkNGQkxTUnZjIiwidCI6MTc3MDgwODA1OX19.Od6C6wqpQaijWlMJC0I8JD-NhN0Dhmy9fKZ6oHDy4qU )
+
+Cut Code Review Time & Bugs in Half. Supports TypeScript, Python, Java and more. ( https://api.daily.dev/v2/c?id=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJPYmplY3QiOnsiaSI6IjQxYmM3ZTk1LTAwOTAtNDYyMC04NDM4LTc2NzBmNzQxYzFjOSIsInUiOiJodHRwczovL2NvZGVyYWJiaXQubGluay9kYWlseSIsImFpIjoiNTMwOTMxMWEtYWFhZi00NjdiLTg2MzQtNzA5OTk3OTI4ODI2IiwiYyI6IjIxMmQ5NmU0LTExYjktNGE4Mi04NmU2LTBmMjk5OWI2NmQwZCIsImEiOiIxMzMzYTc0Yi02ZWIxLTQxNjgtOWU1Mi0yZWJiNWQ5MDljYjciLCJ0aWQiOiIyZjc5NWYxMS0zMzIwLTQ1ZDYtOTBhZi1kMTFhZTM3MDJlODEiLCJ0aWRzIjpbIjJmNzk1ZjExLTMzMjAtNDVkNi05MGFmLWQxMWFlMzcwMmU4MSJdLCJjciI6IjI2NTdjZWFkLWNkZTgtNDEwYi04ZmI4LTAwMTQ1NjU2ZjgzYiIsInVzIjoiWkNpMkZFczFJZkczVkNGQkxTUnZjIiwidCI6MTc3MDgwODA1OX19.Od6C6wqpQaijWlMJC0I8JD-NhN0Dhmy9fKZ6oHDy4qU )​
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Get Started Today ( https://api.daily.dev/v2/c?id=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJPYmplY3QiOnsiaSI6IjQxYmM3ZTk1LTAwOTAtNDYyMC04NDM4LTc2NzBmNzQxYzFjOSIsInUiOiJodHRwczovL2NvZGVyYWJiaXQubGluay9kYWlseSIsImFpIjoiNTMwOTMxMWEtYWFhZi00NjdiLTg2MzQtNzA5OTk3OTI4ODI2IiwiYyI6IjIxMmQ5NmU0LTExYjktNGE4Mi04NmU2LTBmMjk5OWI2NmQwZCIsImEiOiIxMzMzYTc0Yi02ZWIxLTQxNjgtOWU1Mi0yZWJiNWQ5MDljYjciLCJ0aWQiOiIyZjc5NWYxMS0zMzIwLTQ1ZDYtOTBhZi1kMTFhZTM3MDJlODEiLCJ0aWRzIjpbIjJmNzk1ZjExLTMzMjAtNDVkNi05MGFmLWQxMWFlMzcwMmU4MSJdLCJjciI6IjI2NTdjZWFkLWNkZTgtNDEwYi04ZmI4LTAwMTQ1NjU2ZjgzYiIsInVzIjoiWkNpMkZFczFJZkczVkNGQkxTUnZjIiwidCI6MTc3MDgwODA1OX19.Od6C6wqpQaijWlMJC0I8JD-NhN0Dhmy9fKZ6oHDy4qU ) 
+( https://api.daily.dev/v2/c?id=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJPYmplY3QiOnsiaSI6IjQxYmM3ZTk1LTAwOTAtNDYyMC04NDM4LTc2NzBmNzQxYzFjOSIsInUiOiJodHRwczovL2NvZGVyYWJiaXQubGluay9kYWlseSIsImFpIjoiNTMwOTMxMWEtYWFhZi00NjdiLTg2MzQtNzA5OTk3OTI4ODI2IiwiYyI6IjIxMmQ5NmU0LTExYjktNGE4Mi04NmU2LTBmMjk5OWI2NmQwZCIsImEiOiIxMzMzYTc0Yi02ZWIxLTQxNjgtOWU1Mi0yZWJiNWQ5MDljYjciLCJ0aWQiOiIyZjc5NWYxMS0zMzIwLTQ1ZDYtOTBhZi1kMTFhZTM3MDJlODEiLCJ0aWRzIjpbIjJmNzk1ZjExLTMzMjAtNDVkNi05MGFmLWQxMWFlMzcwMmU4MSJdLCJjciI6IjI2NTdjZWFkLWNkZTgtNDEwYi04ZmI4LTAwMTQ1NjU2ZjgzYiIsInVzIjoiWkNpMkZFczFJZkczVkNGQkxTUnZjIiwidCI6MTc3MDgwODA1OX19.Od6C6wqpQaijWlMJC0I8JD-NhN0Dhmy9fKZ6oHDy4qU )
+
+( https://app.daily.dev/posts/O8zsg4tV8?utm_source=notification&utm_medium=email&utm_campaign=digest )
+
+All ShadCN ( https://app.daily.dev/posts/O8zsg4tV8?utm_source=notification&utm_medium=email&utm_campaign=digest )
+
+Vengeance UI: Another beautiful UI library with
+animations ( https://app.daily.dev/posts/O8zsg4tV8?utm_source=notification&utm_medium=email&utm_campaign=digest )​
+--------------------------------------------------------------------------------------------------------------------
+
+Read more → ( https://app.daily.dev/posts/O8zsg4tV8?utm_source=notification&utm_medium=email&utm_campaign=digest ) ( https://app.daily.dev/posts/O8zsg4tV8?utm_source=notification&utm_medium=email&utm_campaign=digest )
+
+( https://app.daily.dev/posts/2nGSglCla?utm_source=notification&utm_medium=email&utm_campaign=digest )
+
+Hacker News ( https://app.daily.dev/posts/2nGSglCla?utm_source=notification&utm_medium=email&utm_campaign=digest )
+
+AI Doesn’t Reduce Work—It Intensifies
+It ( https://app.daily.dev/posts/2nGSglCla?utm_source=notification&utm_medium=email&utm_campaign=digest )​
+------------------------------------------------------------------------------------------------------------
+
+Read more → ( https://app.daily.dev/posts/2nGSglCla?utm_source=notification&utm_medium=email&utm_campaign=digest ) ( https://app.daily.dev/posts/2nGSglCla?utm_source=notification&utm_medium=email&utm_campaign=digest )
+
+( https://app.daily.dev/posts/hKMDP31bT?utm_source=notification&utm_medium=email&utm_campaign=digest )
+
+Dev Tools ( https://app.daily.dev/posts/hKMDP31bT?utm_source=notification&utm_medium=email&utm_campaign=digest )
+
+Claude code : Training
+resources? ( https://app.daily.dev/posts/hKMDP31bT?utm_source=notification&utm_medium=email&utm_campaign=digest )​
+--------------------------------------------------------------------------------------------------------------------
+
+Read more → ( https://app.daily.dev/posts/hKMDP31bT?utm_source=notification&utm_medium=email&utm_campaign=digest ) ( https://app.daily.dev/posts/hKMDP31bT?utm_source=notification&utm_medium=email&utm_campaign=digest )
+
+Fast-track your growth. Upgrade to plus ( https://app.daily.dev/plus )
+
+Try daily.dev on mobile (if you haven’t yet)
+
+( https://apps.apple.com/app/daily-dev/id6740634400 )
+daily.dev for iOS ( https://apps.apple.com/app/daily-dev/id6740634400 )
+
+( https://play.google.com/store/apps/details?id=dev.daily )
+daily.dev for Android ( https://play.google.com/store/apps/details?id=dev.daily )
+
+Explore ( https://app.daily.dev/posts )   |   Discussions ( https://app.daily.dev/discussed )   |   Tags ( https://app.daily.dev/tags )   |   Sources ( https://app.daily.dev/sources )   |   Leaderboard ( https://app.daily.dev/users )
+
+X ( https://twitter.com/dailydotdev ) Yt ( https://www.youtube.com/c/dailydev )
+Inst ( https://www.instagram.com/dailydotdev/ ) Tt ( https://www.tiktok.com/@dailydotdev )
+GitHub ( https://github.com/dailydotdev/daily )
+This email was intended for Robert Dugger (robert.d@consumrbuzz.com)
+You can update your profile settings to change notifications ( https://app.daily.dev/account/notifications ), account details ( https://app.daily.dev/account/profile ) or unsubscribe ( https://track.customer.io/manage_subscription_preferences/RLnCCQUAAZxMYqgfyrNVxNrO6P-SGQ== ) 
+
+( https://app.daily.dev )Daily Dev Ltd., 9 Derech HaTikva Ganei Tikva, Israel
+5591252
+
+==================================================
+
